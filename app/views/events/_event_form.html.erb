@@ -1,0 +1,22 @@
+<%= form_with model: @event do |f| %>
+	<%= f.label :photos %>
+	<%= f.file_field :photos, multiple: true %>
+	<br>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<br>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+	<br>
+	<%= f.label :venue %>
+	<%= f.text_field :venue %>
+	<br>
+	<%= f.label :capacity %>
+	<%= f.number_field :capacity %>
+	<br>
+	<% if @event.new_record? %>
+		<%= f.submit 'Create Event'%>
+	<% else %>
+		<%= f.submit 'Edit Event'%>
+	<% end %>
+<% end %>

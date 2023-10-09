@@ -1,1 +1,16 @@
-<h1>Index Page</h1>
+<h1>Index Page (Your Event) </h1>
+
+
+<% if @events.any? %>
+	<% @events.each do |event| %>
+		<%= link_to event_path(event) do %>
+			<%= image_tag event.photos.first, height: 200 %>
+		<% end %>
+		<p><%= event.title %></p>
+	<% end %>
+<% else %>
+	<p> No events </p>
+<% end %>
+<br>
+
+<%= link_to 'Create New Event', new_event_path %>

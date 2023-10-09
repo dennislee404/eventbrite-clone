@@ -1,0 +1,19 @@
+<h1>Title : <%= @event.title %></h1>
+<br>
+
+<% if @event.photos.attached? %>					
+	<%= image_tag @event.photos.first, height:400 %>						
+<% else %>					
+	<p>No photos found</p>
+<% end%>
+
+<br><br>
+<h2>Description: <%= @event.description%></h2>
+<br>
+<h3>Venue : <%= @event.venue %></h3>
+
+<ul>
+	<li><%= link_to 'Edit Event', edit_event_path %></li>
+	<li><%= link_to 'Delete Event', event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>
+	<li><%= link_to 'Home' , root_path %></li>
+</ul>

@@ -44,6 +44,6 @@ class EventsController < ApplicationController
 		end
 
 		def event_params
-			params.require(:post).permit(:caption, photos: [])
+			params.require(:event).permit(:title,:description,:venue,:capacity, photos: [])
 		end
 end
