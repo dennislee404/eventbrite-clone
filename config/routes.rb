@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root "pages#index"
 
   resources :events
+  resources :bookings
 end
